@@ -1,4 +1,5 @@
 def historique(annee):
+    
     if annee == '1492':
         return "Découverte de l'Amérique"
     elif annee == '1515':
