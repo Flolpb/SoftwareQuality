@@ -1,16 +1,16 @@
 import unittest
-import Premiere_Fonction
+import verif
 
 
 class TestFonc(unittest.TestCase):
     def test(self):
-        self.assertEqual(Premiere_Fonction.historique('1492'), 'Découverte de l\'Amérique')
-        self.assertEqual(Premiere_Fonction.historique('1515'), 'Bataille de Marignan')
-        self.assertEqual(Premiere_Fonction.historique('2O10'), 'Ne correspond à rien')
+        self.assertEqual(verif.historique('1492'), 'Découverte de l\'Amérique')
+        self.assertEqual(verif.historique('1515'), 'Bataille de Marignan')
+        self.assertEqual(verif.historique('2O10'), 'Ne correspond à rien')
     
-    def wrong_test(self):
+    def test_wrong(self):
         with self.assertRaises(TypeError):
-            self.assertEqual(Premiere_Fonction.historique(1095), 'Première croisade')
+            self.assertEqual(verif.historique(1095))
 
 
 

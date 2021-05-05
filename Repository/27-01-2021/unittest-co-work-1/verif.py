@@ -1,20 +1,26 @@
-def password(psd='null'):
-    if psd != 'null':
+def password(psd=None):
+    if psd is not None:
         if len(psd) >= 10 and len(psd) <= 20:
             if '?' in psd or '@' in psd or '&' in psd or '$' in psd or '%' in psd or '#' in psd:
                 if any(x.isupper() for x in psd) and any(x.islower() for x in psd):
                     if any(x.isdigit() for x in psd):
-                        print("Votre mdp correspond à tous les critères")
+                        print("Your mdp is good")
+                        return True
                     else:
-                        print("Veuillez rentrer au moins un chiffre")
+                        print("pls a number")
+                        return False
                 else:
-                    print("Veuillez rentrer au moins une majuscule et une minuscule")
+                    print("pls a uppercase and a lowercase")
+                    return False
             else:
-                print("veuillez rentrer au moins un caractère spécial")
+                print("pls a special caracter")
+                return False
         else:
-            print("rentrez un mot de passe entre 10 et 20 caractères")
+            print("pls a password ")
+            return False
     else:
         print("rentrez un mot de passe svp")
+        return False
 
 def main():
     user_password = input("Saisissez un mot de passe:")
